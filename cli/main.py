@@ -2,7 +2,6 @@ import argparse
 import requests
 from git.repo.base import Repo
 from shutil import copyfile
-from .utils.configuration import create_config_from_template
 from .utils.git import get_uncommitted
 from pathlib import Path
 
