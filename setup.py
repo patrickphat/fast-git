@@ -3,9 +3,10 @@ import setuptools
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
+# Setup tools
 setuptools.setup(
      name='fgit',
-     version='0.0.1b2',
+     version='0.0.1b3',
      author="Truong-Phat Nguyen",
      author_email="me@patrickphat.com",
      description="FGIT: No longer wait for another git commit",
