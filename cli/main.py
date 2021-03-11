@@ -2,7 +2,7 @@ import argparse
 import requests
 from git.repo.base import Repo
 from shutil import copyfile
-from .utils.git import get_uncommitted
+from fgit.utils.git import get_uncommitted
 from pathlib import Path
 
 

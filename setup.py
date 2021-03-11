@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
      name='fgit',
-     version='0.0.1b0',
+     version='0.0.1b2',
      author="Truong-Phat Nguyen",
      author_email="me@patrickphat.com",
      description="FGIT: No longer wait for another git commit",
