@@ -50,7 +50,7 @@ def push(repo_path, message = "update"):
     
     # Push to origin
     repo.remotes.origin.push()
-    print(f"Pushed to {repo.remotes.origin.url}| branch: {repo.active_branch}")
+    print(f"[Woohoo] Pushed to {repo.remotes.origin.url}| branch: {repo.active_branch}")
 
 
 
