@@ -41,7 +41,7 @@ def push(repo_path, message = "update"):
             print("\nUntracked:")
         print(f"[{i}] {file}")
 
-    committed_ids = [int(i) for i in input("\nCommit? ").split()]
+    committed_ids = [int(i) for i in input("\nCommit ids: ").split()]
     commited_files = [file for i, file in enumerate(all_files) if i in committed_ids]
     commit_message = input("Commit message: ")
 
@@ -50,6 +50,8 @@ def push(repo_path, message = "update"):
     
     # Push to origin
     repo.remotes.origin.push()
+
+    print(f"Pushed to {repo.remotes.origin}/{repo.activebranch}")
 
 
 
