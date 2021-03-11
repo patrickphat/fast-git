@@ -50,9 +50,7 @@ def push(repo_path, message = "update"):
     
     # Push to origin
     repo.remotes.origin.push()
-    import ipdb
-    ipdb.set_trace()#
-    print(f"Pushed to {repo.remotes.origin}/{repo.active_branch}")
+    print(f"Pushed to {repo.remotes.origin.url}| branch: {repo.active_branch}")
 
 
 
