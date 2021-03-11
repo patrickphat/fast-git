@@ -11,16 +11,16 @@ CURRENT_PATH = DEFAULT_CONFIG_PATH = Path(__file__).parent
 
 def main():
     parser = argparse.ArgumentParser(prog ='fgit', description ='FuckGit commandline interface') 
-    parser.add_argument("action", type=str, help = "action to perform: create.")
+    parser.add_argument("action", type=str, help = "action to perform: push.")
     parser.add_argument("-m","--message", type=str, help = "commit message")
 
     args = parser.parse_args() 
     action = args.action
 
-    if action == "commit":
-        commit("." , message = args.message)
+    if action == "push":
+        push("." , message = args.message)
 
-def commit(repo_path, message = "update"):
+def push(repo_path, message = "update"):
     ''' 
     Create experiment from a known repository
     '''    
@@ -38,14 +38,15 @@ def commit(repo_path, message = "update"):
         if i == 0:
             print("Modified:")
         elif i == n_modified:
-            print("Untracked:")
+            print("\nUntracked:")
         print(f"[{i}] {file}")
 
-    committed_ids = [int(i) for i in input("Commit? ").split()]
+    committed_ids = [int(i) for i in input("\nCommit? ").split()]
     commited_files = [file for i, file in enumerate(all_files) if i in committed_ids]
-        
+    commit_message = input("Commit message: ")
+
     repo.index.add(commited_files)
-    repo.index.commit(message)
+    repo.index.commit(commit_message)
     
     # Push to origin
     repo.remotes.origin.push()
