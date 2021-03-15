@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 # Setup tools
 setuptools.setup(
      name='fgit',
-     version='0.0.1b5',
+     version='0.0.1b7',
      author="Truong-Phat Nguyen",
      author_email="me@patrickphat.com",
      description="FastGit: No longer wait for another git commit",
@@ -16,7 +16,7 @@ setuptools.setup(
      packages=setuptools.find_packages(exclude=['docs', 'tests', 'experiments']),
      entry_points ={ 
             'console_scripts': [ 
-                'fgit = cli.main:main'
+                'fgit = fgit_cli.main:main'
             ]
      },
      classifiers=[
