@@ -1,4 +1,8 @@
-# FastGit: No longer wait to git push
+<div align="center">
+# FastGit
+*No longer wait to another git push..*
+
+</div>
 
 Why do we have spend too much time on `git add`, `git commit` and `git push` while we can use a single command `fgit push`
 ![img](static/fgit.gif)
