@@ -31,7 +31,7 @@ def push(repo_path: str, message = "update"):
     commited_files = [file for i, file in enumerate(all_files) if i in committed_ids]
     commit_message = input("Commit message: ")
 
-    repo.index.add(commited_files)
+    repo.git.add(commited_files, update=True)
     repo.index.commit(commit_message)
     
     repo.git.push("origin", repo.active_branch)
