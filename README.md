@@ -1,5 +1,7 @@
 <div align="center">
+  
 # FastGit
+
 *No longer wait to another git push..*
 
 </div>
