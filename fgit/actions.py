@@ -58,4 +58,4 @@ def push(repo_path: str, message = "update"):
         repo.index.commit(commit_message)
     
     repo.git.push("origin", repo.active_branch)
-    print(f"Woohoo!~ Pushed to {repo.remotes.origin.url}| branch: {repo.active_branch}")
+    print(f"Woohoo!~ All commits are pushed to {repo.remotes.origin.url}| branch: {repo.active_branch}")
