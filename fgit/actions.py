@@ -37,7 +37,6 @@ def push(repo_path: str, message = "update"):
     if n_all != 0:
         committed_ids = [int(i) for i in input("\nCommit ids: ").split()]
         commit_message = input("Commit message: ")
-
     else:
         print("Nothing to commit.")
     
@@ -55,7 +54,8 @@ def push(repo_path: str, message = "update"):
 
     repo.git.add(committed_files, update=True)
     repo.index.add(committed_del_files)
-    repo.index.commit(commit_message)
+    if n_all != 0:
+        repo.index.commit(commit_message)
     
     repo.git.push("origin", repo.active_branch)
     print(f"Woohoo!~ Pushed to {repo.remotes.origin.url}| branch: {repo.active_branch}")
