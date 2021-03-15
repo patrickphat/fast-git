@@ -3,6 +3,9 @@
 # FastGit
 
 *No longer wait to another git push..*
+[![PyPI version](https://badge.fury.io/py/fgit.svg)](https://badge.fury.io/py/fgit)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/patrickphat/fgit/graphs/commit-activity)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/patrickphat/fgit/blob/master/LICENSE)
 
 </div>
 
