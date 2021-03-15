@@ -34,28 +34,27 @@ def push(repo_path: str, message = "update"):
             print(" - deleted")
         else:
             print("")
-    if n_all != 0:
-        committed_ids = [int(i) for i in input("\nCommit ids: ").split()]
-    else:
+    if n_all == 0:
         print("Nothing to commit.")
-    
-    committed_files = []
-    committed_del_files = []
+    else:
+        committed_ids = [int(i) for i in input("\nCommit ids: ").split()]
+        committed_files = []
+        committed_del_files = []
 
 
-    for i, file in enumerate(all_files):
-        if i in committed_ids:
-           
-            if t_csum[1] <= i < t_csum[2]:
-                committed_del_files.append(file)
-            else:
-                committed_files.append(file)
+        for i, file in enumerate(all_files):
+            if i in committed_ids:
+            
+                if t_csum[1] <= i < t_csum[2]:
+                    committed_del_files.append(file)
+                else:
+                    committed_files.append(file)
 
-    commit_message = input("Commit message: ")
+        commit_message = input("Commit message: ")
 
-    repo.git.add(committed_files, update=True)
-    repo.index.add(committed_del_files)
-    repo.index.commit(commit_message)
-    
-    repo.git.push("origin", repo.active_branch)
-    print(f"Woohoo!~ Pushed to {repo.remotes.origin.url}| branch: {repo.active_branch}")
+        repo.git.add(committed_files, update=True)
+        repo.index.add(committed_del_files)
+        repo.index.commit(commit_message)
+        
+        repo.git.push("origin", repo.active_branch)
+        print(f"Woohoo!~ Pushed to {repo.remotes.origin.url}| branch: {repo.active_branch}")
